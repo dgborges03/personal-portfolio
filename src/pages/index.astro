@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { projects } from "../data/projects.js";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+<Layout>
+  <!-- Hero -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight">
+      Hi, I’m Your Name — Caltech CS (Robotics)
+    </h1>
+    <p class="mt-4 max-w-2xl text-zinc-600">
+      I build reliable autonomy and human-centered robotic systems. Here’s a selection of my recent work.
+    </p>
+    <div class="mt-6 flex gap-3">
+      <a href="https://linkedin.com/in/donavan-borges-57a2aa245" target="_blank" rel="noreferrer" class="rounded-xl border px-4 py-2">
+        LinkedIn
+      </a>
+      <a href="https://github.com/dgborges03" target="_blank" rel="noreferrer" class="rounded-xl bg-zinc-900 px-4 py-2 text-white">
+        Github
+      </a>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section id="projects" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+    <h2 class="sr-only">Projects</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+</Layout>
+

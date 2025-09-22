@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Donavan Borges — Portfolio</title>
+    <meta
+      name="description"
+      content="Caltech CS senior specializing in robotics — projects, experience, and contact."
+    />
+  </head>
+
+  <body class="bg-white text-zinc-900 antialiased font-sans">
+    <!-- Header -->
+    <header class="w-full sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-zinc-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="/" class="flex items-center gap-2">
+            <img src="/favicon.svg" alt="" class="h-8 w-8" />
+            <span class="text-lg sm:text-xl font-semibold tracking-tight">Donavan Borges</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <!-- <a href="/#projects" class="hover:text-zinc-700 transition">Projects</a> -->
+            <a href="/about" class="hover:text-zinc-700 transition">About</a>
+            <a href="/contact" class="hover:text-zinc-700 transition">Contact</a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" class="hover:text-zinc-700 transition">Resume</a>
+          </nav>
+
+          <!-- Mobile menu -->
+          <details class="md:hidden relative">
+            <summary class="list-none flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-200 hover:border-zinc-300">
+              <span class="sr-only">Open menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </summary>
+            <div class="absolute right-0 mt-2 w-56 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl">
+              <!-- <a href="/#projects" class="block px-4 py-3 hover:bg-zinc-50">Projects</a> -->
+              <a href="/about" class="block px-4 py-3 hover:bg-zinc-50">About</a>
+              <a href="/contact" class="block px-4 py-3 hover:bg-zinc-50">Contact</a>
+              <a href="/resume.pdf" class="block px-4 py-3 hover:bg-zinc-50" target="_blank" rel="noreferrer">Resume</a>
+            </div>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <p class="text-sm text-zinc-600">
+            © {new Date().getFullYear()} Donavan Borges — Caltech CS (Robotics)
+          </p>
+          <div class="flex items-center gap-4 text-sm text-zinc-600">
+            <a class="hover:underline underline-offset-4" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="hover:underline underline-offset-4" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Global helpers -->
+    <style is:global>
+      .font-sans {
+        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+      }
+      ::selection { background: rgb(99 102 241 / .18); }
+    </style>
+  </body>
+</html>
+
