@@ -2,20 +2,19 @@
 export const projects = [
   {
     id: "nacho",
-    title: "Autonomous Navigation Stack",
+    title: "Meet Nacho!",
     year: "2025",
-    role: "",
-    summary: "Real-time SLAM + path planning on Jetson for indoor robots.",
-    tags: ["C++", "ROS2", "Nav2", "CUDA"],
+    role: "Robotics Project",
+    summary:
+      "Nacho is a mobile robot built on a Raspberry Pi 4 with infrared and ultrasonic sensing. He builds a node-based map in real time, prioritizing accuracy and safety. Nacho avoids collisions, replans around obstacles, and demonstrates multi-robot exploration and mapping.",
+    tags: ["Python", "Mapping", "Path Planning", "Multi-threading", "ROS"],
     image: "/images/nacho.jpg",
-    links: [
-      { label: "GitHub", href: "https://github.com/yourname/autonav" },
-      { label: "Demo", href: "https://youtu.be/demo1" },
-    ],
+    video: { type: "mp4", src: "/videos/nacho.MOV" },
     bullets: [
-      "Integrated Cartographer SLAM with Nav2 and a custom local planner.",
-      "Latency-optimized perception pipeline (TensorRT on Jetson).",
-      "Achieved <50ms control loop at 20Hz with obstacle avoidance.",
+      "Programmed mobile robot behaviors in Python for exploration, mapping, navigation, and reactive obstacle avoidance.",
+      "Implemented motor control with continuous sensor feedback loops (IR, ultrasound), combining polling and interrupt-driven I/O.",
+      "Designed multi-threaded architectures for real-time sensing, planning, and actuation.",
+      "Developed planning and exploration algorithms via graph data structures; showcased in a multi-robot autonomous challenge demo.",
     ],
   },
 ];
