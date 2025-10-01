@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Analytics from '@vercel/analytics/astro';
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -80,5 +81,6 @@ import "../styles/global.css";
       }
       ::selection { background: rgb(99 102 241 / .18); }
     </style>
+    <Analytics/>
   </body>
 </html>
