@@ -48,7 +48,7 @@ export const projects = [
     summary:
       "Taking inspiration from Cornells's and Waterloo's autonomous combat robots, I am leading and creating CRT's first every autonmous robot designed for combat robotics!",
     tags: ["Robotics", "Autonomy", "Perception", "Tracking", "Embedded", "Controls"],
-    image: "/images/projects/placeholder-battlebot.jpg",
+    image: "",
     // video: 
     bullets: [
       "This is an ungoing process and will be updated as time goes!"
