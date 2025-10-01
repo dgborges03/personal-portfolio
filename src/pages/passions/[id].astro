@@ -1,4 +1,4 @@
-<!-- ---
+---
 import Layout from "../../layouts/Layout.astro";
 import { passions } from "../../data/passions.js";
 
@@ -12,9 +12,9 @@ export async function getStaticPaths() {
 }
 
 const { passion } = Astro.props;
-const heroImage = passion.detailImage || passion.image;
+const heroImage = passion.image;
 ---
 <Layout>
-  ********** Save for when one of my projects have a "View Project" button **********
-</Layout> -->
+  <!-- ********** Save for when one of my projects have a "View Project" button ********** -->
+</Layout>
 
