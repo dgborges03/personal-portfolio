@@ -1,10 +1,8 @@
 ---
-/** Props: { item: { id, title, emoji?, blurb, image?, tags?, link?: string|null, fit?: "contain"|"cover" } } */
 const { item } = Astro.props;
 const isClickable = !!item.link;
 ---
 <article class="group relative w-full overflow-hidden rounded-2xl border bg-gradient-to-br from-zinc-50 to-white shadow-sm">
-  <!-- Two columns at sm+: text (5fr) | image (3fr). No col-span on text. -->
   <div class="grid grid-cols-1 sm:grid-cols-[5fr_3fr] items-stretch">
     <!-- Text -->
     <div class="p-5 sm:p-6 flex flex-col gap-2 cursor-default">
@@ -33,7 +31,7 @@ const isClickable = !!item.link;
       )}
     </div>
 
-    <!-- Image / placeholder -->
+    <!-- Image -->
     <div class="relative hidden sm:block min-h-[220px]">
       {item.image ? (
         <img

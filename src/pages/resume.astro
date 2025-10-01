@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="sr-only">Resume</h1>
+
+    <!-- Direct link (download/open in new tab) -->
+    <div class="mb-4">
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm hover:bg-zinc-50"
+      >
+        Open PDF in new tab
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M10 7h7v7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Inline PDF viewer -->
+    <div class="w-full h-[82vh] rounded-xl border overflow-hidden">
+      <iframe
+        src="/resume.pdf#view=FitH"
+        title="Donavan Borges — Resume"
+        class="w-full h-full"
+      ></iframe>
+    </div>
+  </section>
+</Layout>

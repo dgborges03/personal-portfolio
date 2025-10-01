@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { projects } from "../../data/projects.js";
 
 export async function getStaticPaths() {
@@ -10,7 +10,8 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const video = project.video; // optional
+const video = project.video;
+const heroImage = project.detailImage || project.image;
 ---
 <Layout>
   <article class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
@@ -21,7 +22,7 @@ const video = project.video; // optional
       </p>
     </header>
 
-    <!-- Hero media: prefer VIDEO, fallback to IMAGE -->
+    <!-- Hero media -->
     {video ? (
       <div class="mt-6 aspect-video w-full overflow-hidden rounded-xl border">
         {video.type === "youtube" && (
@@ -54,14 +55,14 @@ const video = project.video; // optional
             playsinline
             controls
             class="h-full w-full object-cover"
-            poster={project.image}  /* optional: shown briefly before playback */
+            poster={heroImage}
           ></video>
         )}
       </div>
     ) : (
-      project.image && (
+      heroImage && (
         <img
-          src={project.image}
+          src={heroImage}
           alt={project.title}
           class="mt-6 w-full rounded-xl border"
           loading="lazy"
@@ -100,7 +101,7 @@ const video = project.video; // optional
       </div>
     )}
 
-    <!-- 💬 Nacho-specific shoutout -->
+    <!-- Nacho-only shoutout to Maxx the goat -->
     {project.id === "nacho" && (
       <div class="mt-6 p-4 border rounded-xl bg-zinc-50">
         <p class="text-sm text-zinc-700">
@@ -113,15 +114,13 @@ const video = project.video; // optional
           >
             Maxx Ibarra
           </a>{" "}
-        for helping with this project!
+          for helping with this project!
         </p>
       </div>
     )}
 
     <div class="mt-10">
-      <a href="/#projects" class="text-sm underline underline-offset-4"
-        >← Back to projects</a
-      >
+      <a href="/#projects" class="text-sm underline underline-offset-4">← Back to projects</a>
     </div>
   </article>
 </Layout>
