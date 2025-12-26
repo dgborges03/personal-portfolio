@@ -18,20 +18,47 @@ export const projects = [
     ],
   },
   {
+    id: "robopaws",
+    title: "RoboPaws",
+    year: "2025",
+    role: "ME 133a Team Project",
+    summary:
+      "RoboPaws is a quadruped locomotion project where I helped simulate a Unitree Go2 performing a range of gaits and tricks—including walking, oblique walking, galloping, and jumping in place primarily using RVIZ. I focused on building a whole-body inverse kinematics pipeline that maps a 12D foot task space to an 18DOF joint space, using secondary-task posture control and weighted Jacobians to reduce base wobble and produce stable, dog-like motion.",
+    tags: [
+      "Quadruped Locomotion",
+      "Inverse Kinematics",
+      "Weighted Jacobian",
+      "ROS 2",
+      "RVIZ",
+      "Ubuntu",
+      "Trajectory Generation",
+    ],
+    image: "/images/go2.png",
+    video: { type: "mp4", src: "/videos/RoboPaws_ME133a_FinalProjectVideo.mp4" },
+    bullets: [
+      "Ported an open-source Unitree Go2 URDF from ROS 1 to ROS 2 and extended the model with a world-to-body joint, enabling full base motion relative to the environment.",
+      "Designed gait trajectories using a phase-based formulation, combining sinusoidal foot lift in the vertical direction with stride progression in the horizontal plane and per-leg phase offsets.",
+      "Implemented whole-body inverse kinematics using a 12x18 combined Jacobian, solved via pseudoinverse and weighted inverse formulations.",
+      "Introduced a secondary task objective to maintain neutral leg posture, prevent drift, and avoid singular configurations during extended or aggressive motions.",
+      "Applied and tuned weighted Jacobians to bias motion between body stability and joint actuation, significantly reducing base wobble across different gaits such as walking, galloping, and jumping.",
+    ],
+  },
+  {
     id: "crt",
     title: "Caltech Robotics Team",
     year: "2025",
-    role: "Treasurer & Software Team Lead",
+    role: "Treasurer & Business / Software Team Lead",
     summary:
-      "As Treasurer and Software Team Lead, I managed resources across multidisciplinary projects while guiding software direction. From quadrupeds to combat robotics, I help create autonomous systems. Along with this, I built the team's official website.",
-    image: "/images/crt-logo.png",        // project card image
-    detailImage: "/images/team-picture.jpg", // detail page hero image
+      "As Treasurer and Business/Software Team Lead for the Caltech Robotics Team, I manage finances, sponsorships, and software direction across multiple student-led robotics projects. I oversee workflows spanning open-source quadrupeds, combat robots, RoboSub, and the team website—while building sustainable funding pipelines and onboarding new members into modern robotics software practices.",
+    image: "/images/crt-logo.png",
+    detailImage: "/images/team-picture.jpg",
     tags: ["Leadership", "Robotics", "Software", "Management", "Web Development"],
     bullets: [
-      "Managed finances and resources for multi-project initiatives spanning ME, EE, and CS subteams.",
-      "Guided software direction across diverse efforts: open-source quadruped (CCBR), combat robots, RoboSub.",
-      "Drove scoping, timelines, and documentation for consistent student-led progress on autonomous systems.",
-      "Designed and built the Caltech Robotics Team website to showcase projects, sponsors, and members.",
+      "Managed finances for multi-project robotics initiatives, raising over $15K in my first term toward a $50K annual funding goal.",
+      "Led software development across projects including an open-source quadruped, combat robots, RoboSub, and the team website, enforcing consistent Git-based workflows and modern CI/CD practices.",
+      "Onboarded and mentored new members, helping them ramp up quickly on robotics software stacks, ROS pipelines, and collaborative development workflows.",
+      "Coordinated outreach efforts such as cross-university combat robotics competitions, lab tours, and STEM outreach events.",
+      "Established and maintained sponsorship relationships by drafting proposal documents and collaborating with companies to secure equipment and funding.",
     ],
     links: [
       { label: "Team Website", href: "https://crt.caltech.edu" },
@@ -47,7 +74,7 @@ export const projects = [
     status: "ongoing",
     summary:
       "Taking inspiration from Cornells's and Waterloo's autonomous combat robots, I am leading and creating CRT's first every autonmous robot designed for combat robotics!",
-    tags: ["Robotics", "Autonomy", "Perception", "Tracking", "Embedded", "Controls"],
+    tags: ["Autonomy", "Perception", "Tracking", "Embedded", "Controls"],
     image: "",
     // video: 
     bullets: [

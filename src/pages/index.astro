@@ -72,7 +72,7 @@ import PassionCard from "../components/PassionCard.astro";
     <p class="mt-2 text-zinc-600 max-w-2xl padding-below:100px pb-5">
       Take a look of things that I am particularly proud of below!
     </p>
-    <div class="flex flex-col gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {projects.map((p, i) => <ProjectCard project={p} flip={i % 2 === 1} />)}
     </div>
   </section>

@@ -1,54 +1,64 @@
 ---
-const { project, flip = false } = Astro.props;
+const { project } = Astro.props;
 const href = `/projects/${project.id}`;
 ---
-<article class="w-full max-w-7xl mx-auto overflow-hidden rounded-2xl border bg-white shadow-sm">
-  <a href={href} class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/60">
-    <div class={`grid grid-cols-1 md:grid-cols-2 items-stretch`}>
-      <!-- Media -->
-      <div class={`relative ${flip ? "md:order-2" : ""}`}>
-        <div class="h-56 md:h-56 lg:h-64 w-full flex items-center justify-center pt-10 bg-white">
-          <img
-            src={project.image}
-            alt={project.title}
-            class="block object-contain"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
+<article class="w-full max-w-xl mx-auto overflow-hidden rounded-2xl border bg-white shadow-sm">
+  <a
+    href={href}
+    class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/60"
+  >
+    <!-- Media (TOP) -->
+    <div class="h-56 lg:h-64 w-full flex items-center justify-center bg-white border-b">
+      <img
+        src={project.image}
+        alt={project.title}
+        class="h-full w-full object-cover object-center"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
 
-      <!-- Content -->
-      <div class={`p-6 sm:p-8 flex flex-col justify-center ${flip ? "md:order-1" : ""}`}>
+    <!-- Content (BOTTOM) -->
+    <div class="p-6 sm:p-7 flex flex-col">
+      <div class="flex items-center gap-3">
         <h3 class="text-xl font-semibold tracking-tight">
           {project.title}
         </h3>
-        <div class="flex items-center gap-2">
-          {project.status === "ongoing" && (
-            <span class="inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] leading-none text-zinc-700">
-              Ongoing
-            </span>
-          )}
-        </div>
-        <p class="mt-2 text-sm sm:text-base text-zinc-600 leading-relaxed">
-          {project.summary}
-        </p>
 
-        {project.tags?.length > 0 && (
-          <ul class="mt-4 flex flex-wrap gap-2">
-            {project.tags.slice(0, 5).map((t) => (
-              <li class="rounded-full border px-2 py-0.5 text-xs text-zinc-600">{t}</li>
-            ))}
-          </ul>
+        {project.status === "ongoing" && (
+          <span class="inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] leading-none text-zinc-700">
+            Ongoing
+          </span>
         )}
-
-        <span class="mt-5 inline-flex items-center gap-2 text-sm text-zinc-700 hover:underline underline-offset-4">
-          View project
-          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/>
-          </svg>
-        </span>
       </div>
+
+      <p class="mt-2 text-sm sm:text-base text-zinc-600 leading-relaxed">
+        {project.summary}
+      </p>
+
+      {project.tags?.length > 0 && (
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {project.tags.slice(0, 5).map((t) => (
+            <li class="rounded-full border px-2 py-0.5 text-xs text-zinc-600">
+              {t}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <span class="mt-5 inline-flex items-center gap-2 text-sm text-zinc-700 hover:underline underline-offset-4">
+        View project
+        <svg
+          viewBox="0 0 24 24"
+          class="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+        </svg>
+      </span>
     </div>
   </a>
 </article>
