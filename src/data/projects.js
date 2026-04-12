@@ -34,11 +34,12 @@ export const projects = [
       "Motion Planning",
     ],
     image: "/images/cupstacker.jpg",
-    video: { type: "mp4", src: "/videos/MECSEE 134 Final Video with Audio.mp4" },
+    video: { type: "mp4", src: "/videos/faststackbot.mp4" },
     bullets: [
       "Built a 5-DOF autonomous manipulation system that detects user-defined pyramid placement from ArUco markers and executes build and downstack behaviors for cup pyramids.",
       "Integrated overhead depth sensing, color and shape filtering, and multi-layer cup detection to localize cups at different heights while compensating for calibration and perspective effects.",
       "Developed ROS-based mapping, planning, and motor-control nodes with internal pyramid-state modeling, gripper-feedback-based grasp recovery, and replanning when cups or markers moved during execution.",
+      "Two Recovery Modes includes: Knowing when it has not successfully picked up a cup and realizing when a collsion has been detected."
     ],
   },
   {
