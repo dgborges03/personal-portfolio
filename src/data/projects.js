@@ -34,7 +34,7 @@ export const projects = [
       "Motion Planning",
     ],
     image: "/images/cupstacker.jpg",
-    video: { type: "mp4", src: "/videos/faststackbot.mp4" },
+    video: { type: "mp4", src: "/videos/faststackbotgood.mp4" },
     bullets: [
       "Built a 5-DOF autonomous manipulation system that detects user-defined pyramid placement from ArUco markers and executes build and downstack behaviors for cup pyramids.",
       "Integrated overhead depth sensing, color and shape filtering, and multi-layer cup detection to localize cups at different heights while compensating for calibration and perspective effects.",
