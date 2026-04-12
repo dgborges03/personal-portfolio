@@ -18,6 +18,30 @@ export const projects = [
     ],
   },
   {
+    id: "stackbot",
+    title: "StackBot",
+    year: "2026",
+    role: "ME/CS/EE 134 Team Project",
+    summary:
+      "StackBot is a 5-DOF robotic arm that autonomously builds a cup pyramid relative to human-placed ArUco markers and then collapses it back into a single stack. The system combines overhead RealSense sensing, ArUco-based workspace calibration, HSV color filtering, multi-depth-layer cup detection, internal pyramid-state modeling, and ROS-based planning to support dynamic replanning and recovery during manipulation.",
+    tags: [
+      "Robotic Manipulation",
+      "ROS 2",
+      "Computer Vision",
+      "ArUco",
+      "RealSense",
+      "Kinematics",
+      "Motion Planning",
+    ],
+    image: "/images/cupstacker.jpg",
+    video: { type: "mp4", src: "/videos/MECSEE 134 Final Video with Audio.mp4" },
+    bullets: [
+      "Built a 5-DOF autonomous manipulation system that detects user-defined pyramid placement from ArUco markers and executes build and downstack behaviors for cup pyramids.",
+      "Integrated overhead depth sensing, color and shape filtering, and multi-layer cup detection to localize cups at different heights while compensating for calibration and perspective effects.",
+      "Developed ROS-based mapping, planning, and motor-control nodes with internal pyramid-state modeling, gripper-feedback-based grasp recovery, and replanning when cups or markers moved during execution.",
+    ],
+  },
+  {
     id: "robopaws",
     title: "RoboPaws",
     year: "2025",
@@ -41,6 +65,30 @@ export const projects = [
       "Implemented whole-body inverse kinematics using a 12x18 combined Jacobian, solved via pseudoinverse and weighted inverse formulations.",
       "Introduced a secondary task objective to maintain neutral leg posture, prevent drift, and avoid singular configurations during extended or aggressive motions.",
       "Applied and tuned weighted Jacobians to bias motion between body stability and joint actuation, significantly reducing base wobble across different gaits such as walking, galloping, and jumping.",
+    ],
+  },
+  {
+    id: "mcl-localization",
+    title: "Monte Carlo Localization Simulation",
+    year: "2026",
+    role: "ME/CS/EE 133b Team Project",
+    summary:
+      "This project explored Monte Carlo Localization as a particle-filter-based solution for robot pose estimation in ambiguous environments. We built a full localization pipeline using probabilistic motion updates, simulated 2D LiDAR ray casting, Gaussian weighting, adaptive resampling, and robustness strategies like particle injection and jitter, then studied how tuning key parameters affected accuracy and convergence across several map types.",
+    tags: [
+      "Monte Carlo Localization",
+      "Particle Filter",
+      "LiDAR",
+      "Probabilistic Robotics",
+      "Python",
+      "Simulation",
+      "Data Analysis",
+    ],
+    image: "/images/mcl.png",
+    video: { type: "mp4", src: "/videos/ME_CS_EE 133b Final Project Video.mp4" },
+    bullets: [
+      "Implemented a particle-filter-based localization pipeline that estimated robot pose with weighted particles, probabilistic motion updates, simulated LiDAR measurements, and circular-mean heading estimation.",
+      "Evaluated performance across asymmetric and highly symmetric maps by varying particle count, LiDAR ray count, measurement noise, and motion noise to study localization under ambiguity.",
+      "Analyzed tradeoffs between accuracy, convergence, and effective sample size, showing how parameter tuning and environment structure strongly affect robustness.",
     ],
   },
   {
