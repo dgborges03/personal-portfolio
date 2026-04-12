@@ -43,6 +43,35 @@ export const projects = [
     ],
   },
   {
+    id: "telepresence-robot",
+    title: "Smartphone Telepresence Robot",
+    year: "2026",
+    role: "Personal Project",
+    summary:
+      "A remotely controlled telepresence robot that lets you drive, see, hear, and speak from anywhere in the world. Built on a SMARS-inspired chassis, an ESP32 handles motor control over MQTT, while an Android phone mounted on the robot streams live video and two-way audio via WebRTC. Everything is controlled through a custom web dashboard with no app install required.",
+    tags: [
+      "ESP32",
+      "MQTT",
+      "WebRTC",
+      "IoT",
+      "C++",
+      "JavaScript",
+      "PlatformIO",
+      "Embedded Systems",
+    ],
+    image: "/images/smars.jpg",
+    video: { type: "mp4", src: "/videos/smars.mp4" },
+    bullets: [
+      "Programmed an ESP32 microcontroller in C++ to receive WASD motor commands over MQTT via HiveMQ Cloud, enabling worldwide control over any internet connection.",
+      "Built a WebRTC peer-to-peer video and two-way audio pipeline using an Android phone as the robot's camera and microphone, with HiveMQ handling signaling and Metered TURN server enabling cross-network relay.",
+      "Developed a plain HTML/CSS/JS web dashboard with keyboard motor control, live video display, mic toggle, and a real-time robot status feed — no framework or app install required.",
+      "Debugged and resolved MQTT buffer overflow, ICE candidate race conditions, WebRTC autoplay restrictions, and motor driver current issues through iterative hardware and software testing.",
+    ],
+    links: [
+      { label: "Hackaday Post", href: "https://hackaday.io/project/204974-smars-telepresence-bot" },
+    ],
+  },
+  {
     id: "robopaws",
     title: "RoboPaws",
     year: "2025",
@@ -97,6 +126,7 @@ export const projects = [
     title: "Caltech Robotics Team",
     year: "2025",
     role: "Treasurer & Business / Software Team Lead",
+    status: "Ongoing",
     summary:
       "As Treasurer and Business/Software Team Lead for the Caltech Robotics Team, I manage finances, sponsorships, and software direction across multiple student-led robotics projects. I oversee workflows spanning open-source quadrupeds, combat robots, RoboSub, and the team website—while building sustainable funding pipelines and onboarding new members into modern robotics software practices.",
     image: "/images/crt-logo.png",
@@ -120,7 +150,7 @@ export const projects = [
     title: "Autonomous Combat Robot",
     year: "2025",
     role: "Perception & Autonomy (Ongoing)",
-    status: "ongoing",
+    status: "Ongoing",
     summary:
       "Taking inspiration from Cornells's and Waterloo's autonomous combat robots, I am leading and creating CRT's first every autonmous robot designed for combat robotics!",
     tags: ["Autonomy", "Perception", "Tracking", "Embedded", "Controls"],
